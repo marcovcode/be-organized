@@ -20,7 +20,7 @@ function JoinForm() {
             className="flex w-96 max-w-[90vw] flex-col gap-4"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <h1 className="font-semibold">Start organizing your day</h1>
+            <h1 className="font-semibold">Start organizing your life</h1>
 
             <label
                 className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2`}
