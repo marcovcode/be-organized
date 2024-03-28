@@ -1,4 +1,5 @@
 import { SubmitHandler, useForm, FieldValues } from "react-hook-form";
+import { HiEnvelope } from "react-icons/hi2";
 
 const EMAIL_VALIDATION_REGEX = new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
@@ -17,17 +18,22 @@ function JoinForm() {
         >
             <h1 className="font-semibold">Start organizing your day</h1>
 
-            <input
-                className={`${formState.errors.email && "input-error"} input input-bordered`}
-                placeholder="Type your email here..."
-                required
-                {...register("email", {
-                    pattern: {
-                        value: EMAIL_VALIDATION_REGEX,
-                        message: "Invalid email address",
-                    },
-                })}
-            />
+            <label
+                className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2`}
+            >
+                <HiEnvelope />
+                <input
+                    className="grow"
+                    placeholder="Type your email here..."
+                    required
+                    {...register("email", {
+                        pattern: {
+                            value: EMAIL_VALIDATION_REGEX,
+                            message: "Invalid email address",
+                        },
+                    })}
+                />
+            </label>
 
             <button className="btn btn-neutral">Join</button>
         </form>
