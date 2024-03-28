@@ -1,14 +1,18 @@
 import { SubmitHandler, useForm, FieldValues } from "react-hook-form";
 import { HiEnvelope } from "react-icons/hi2";
+import { useJoin } from "./useJoin";
+
+import Spinner from "../../ui/Spinner";
 
 const EMAIL_VALIDATION_REGEX = new RegExp(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/);
 
 function JoinForm() {
     const { handleSubmit, register, formState } = useForm();
+    const { join, isPending } = useJoin();
 
     const onSubmit: SubmitHandler<FieldValues> = (formData) => {
         const { email } = formData;
-        console.log(email);
+        join(email);
     };
 
     return (
@@ -20,11 +24,14 @@ function JoinForm() {
 
             <label
                 className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2`}
+                disabled={isPending}
             >
                 <HiEnvelope />
+
                 <input
                     className="grow"
                     placeholder="Type your email here..."
+                    disabled={isPending}
                     required
                     {...register("email", {
                         pattern: {
@@ -35,7 +42,9 @@ function JoinForm() {
                 />
             </label>
 
-            <button className="btn btn-neutral">Join</button>
+            <button className="btn btn-neutral" disabled={isPending}>
+                {isPending ? <Spinner disabled={isPending} /> : "Join"}
+            </button>
         </form>
     );
 }
