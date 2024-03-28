@@ -1,7 +1,12 @@
 import JoinForm from "../features/join/JoinForm";
+import FullPageCentered from "../ui/FullPageCentered";
 
 function Join() {
-    return <JoinForm />;
+    return (
+        <FullPageCentered>
+            <JoinForm />
+        </FullPageCentered>
+    );
 }
 
 export default Join;
