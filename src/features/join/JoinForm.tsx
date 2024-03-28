@@ -1,7 +1,7 @@
 function JoinForm() {
     return (
         <form className="flex w-96 max-w-[90vw] flex-col gap-4">
-            <h1 className="font-semibold">Join Organize Me today</h1>
+            <h1 className="font-semibold">Start organizing your day</h1>
 
             <input
                 className="input input-bordered"
