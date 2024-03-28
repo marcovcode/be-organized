@@ -6,7 +6,7 @@ export async function sendMagicLink(email: string) {
         email: email,
     });
 
-    if (error) toast.error("An error has occurred");
+    if (error) toast.error("An error has occurred while joining");
     else if (!error) toast.success("A verification email has been sent to you");
 
     return data;
