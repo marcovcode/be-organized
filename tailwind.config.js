@@ -9,7 +9,7 @@ export default {
         },
     },
     daisyui: {
-        themes: ["cupcake"],
+        themes: ["pastel"],
     },
     plugins: [require("daisyui")],
 };
