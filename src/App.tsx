@@ -6,6 +6,7 @@ import { Suspense, lazy } from "react";
 import AppLayout from "./ui/AppLayout";
 import FullPageSpinner from "./ui/FullPageSpinner";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import Todos from "./pages/Todos";
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,14 @@ function App() {
                     <BrowserRouter>
                         <Routes>
                             <Route element={<AppLayout />}>
-                                <Route index element={<ProtectedRoute />} />
+                                <Route
+                                    index
+                                    element={
+                                        <ProtectedRoute>
+                                            <Todos />
+                                        </ProtectedRoute>
+                                    }
+                                />
                                 <Route element={<Join />} path="join" />
                             </Route>
                         </Routes>
