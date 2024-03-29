@@ -5,7 +5,7 @@ interface PropTypes {
 function Spinner({ disabled }: PropTypes) {
     return (
         <svg
-            className={`h-6 w-6 animate-spin fill-primary-content text-transparent ${disabled ? "opacity-50" : ""}`}
+            className={`h-6 w-6 animate-spin fill-primary-content text-transparent ${disabled ? "opacity-20" : ""}`}
             viewBox="0 0 100 101"
         >
             <path
