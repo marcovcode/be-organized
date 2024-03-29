@@ -1,3 +1,4 @@
+import { useDeleteTodo } from "../features/todos/useDeleteTodo";
 import { useSetDoneTodo } from "../features/todos/useSetDoneTodo";
 import { Tables } from "../types";
 
@@ -10,9 +11,14 @@ interface PropTypes {
 
 function Todo({ todo }: PropTypes) {
     const { setDoneTodo } = useSetDoneTodo();
+    const { deleteTodo } = useDeleteTodo();
 
     function handleToggleDone() {
         setDoneTodo({ id: todo.id, done: !todo.done });
+    }
+
+    function handleDelete() {
+        deleteTodo(todo.id);
     }
 
     return (
@@ -23,7 +29,7 @@ function Todo({ todo }: PropTypes) {
             <span>{todo.content}</span>
             <div className="flex gap-2">
                 <DoneButton done={todo.done!} onClick={handleToggleDone} />
-                <DeleteButton />
+                <DeleteButton onClick={handleDelete} />
             </div>
         </li>
     );

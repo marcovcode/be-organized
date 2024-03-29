@@ -13,3 +13,8 @@ export async function setDoneTodo(id: number, done: boolean) {
         .eq("id", id);
     if (error) throw new Error(error.message);
 }
+
+export async function deleteTodo(id: number) {
+    const { error } = await supabase.from("todos").delete().eq("id", id);
+    if (error) throw new Error(error.message);
+}
