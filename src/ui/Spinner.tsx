@@ -1,5 +1,5 @@
 interface PropTypes {
-    disabled: boolean | undefined;
+    disabled?: boolean | undefined;
 }
 
 function Spinner({ disabled }: PropTypes) {
