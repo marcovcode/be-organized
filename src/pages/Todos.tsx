@@ -12,7 +12,7 @@ function Todos() {
 
     return (
         <FullPageCentered>
-            <div className="flex flex-col gap-4">
+            <div className="mx-4 flex flex-col gap-4">
                 <TodosTitle />
                 <TodoList />
             </div>

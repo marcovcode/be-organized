@@ -5,3 +5,11 @@ export async function getTodos() {
     if (error) throw new Error(error.message);
     return todos;
 }
+
+export async function setDoneTodo(id: number, done: boolean) {
+    const { error } = await supabase
+        .from("todos")
+        .update({ done: done })
+        .eq("id", id);
+    if (error) throw new Error(error.message);
+}

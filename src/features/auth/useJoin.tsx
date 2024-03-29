@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 export function useJoin() {
     const { mutate: join, isPending } = useMutation({
         mutationFn: (email: string) => sendMagicLink(email),
-        mutationKey: ["user"],
 
         onSuccess: () =>
             toast.success("A verification email has been sent to you"),
