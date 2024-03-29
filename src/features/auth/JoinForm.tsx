@@ -16,12 +16,7 @@ function JoinForm() {
     };
 
     return (
-        <form
-            className="mx-4 flex w-96 flex-col gap-4"
-            onSubmit={handleSubmit(onSubmit)}
-        >
-            <h1 className="font-semibold">Start organizing your life</h1>
-
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             <label
                 className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2`}
                 disabled={isPending}

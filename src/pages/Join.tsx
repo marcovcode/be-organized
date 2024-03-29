@@ -1,10 +1,14 @@
 import JoinForm from "../features/auth/JoinForm";
+import JoinTitle from "../features/auth/JoinTitle";
 import FullPageCentered from "../ui/FullPageCentered";
 
 function Join() {
     return (
         <FullPageCentered>
-            <JoinForm />
+            <div className="flex w-96 flex-col gap-4">
+                <JoinTitle />
+                <JoinForm />
+            </div>
         </FullPageCentered>
     );
 }
