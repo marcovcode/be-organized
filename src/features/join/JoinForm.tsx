@@ -17,7 +17,7 @@ function JoinForm() {
 
     return (
         <form
-            className="flex w-96 max-w-[90vw] flex-col gap-4"
+            className="mx-4 flex w-96 flex-col gap-4"
             onSubmit={handleSubmit(onSubmit)}
         >
             <h1 className="font-semibold">Start organizing your life</h1>
