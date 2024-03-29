@@ -1,17 +1,17 @@
+import { HiCheck, HiTrash } from "react-icons/hi2";
 import { useDeleteTodo } from "../features/todos/useDeleteTodo";
 import { useSetDoneTodo } from "../features/todos/useSetDoneTodo";
 import { Tables } from "../types";
 
-import DeleteButton from "./DeleteButton";
-import DoneButton from "./DoneButton";
+import CircularButton from "./CircularButton";
 
 interface PropTypes {
     todo: Tables<"todos">;
 }
 
 function Todo({ todo }: PropTypes) {
-    const { setDoneTodo } = useSetDoneTodo();
-    const { deleteTodo } = useDeleteTodo();
+    const { setDoneTodo, isPending: isPendingSetDone } = useSetDoneTodo();
+    const { deleteTodo, isPending: isPendingDelete } = useDeleteTodo();
 
     function handleToggleDone() {
         setDoneTodo({ id: todo.id, done: !todo.done });
@@ -28,8 +28,23 @@ function Todo({ todo }: PropTypes) {
         >
             <span>{todo.content}</span>
             <div className="flex gap-2">
-                <DoneButton done={todo.done!} onClick={handleToggleDone} />
-                <DeleteButton onClick={handleDelete} />
+                <CircularButton
+                    color={todo.done ? "neutral" : ""}
+                    small
+                    isLoading={isPendingSetDone}
+                    onClick={handleToggleDone}
+                >
+                    <HiCheck />
+                </CircularButton>
+
+                <CircularButton
+                    color="error"
+                    small
+                    isLoading={isPendingDelete}
+                    onClick={handleDelete}
+                >
+                    <HiTrash />
+                </CircularButton>
             </div>
         </li>
     );

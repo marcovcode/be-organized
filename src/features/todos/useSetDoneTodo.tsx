@@ -10,7 +10,7 @@ interface ParameterTypes {
 export function useSetDoneTodo() {
     const queryClient = useQueryClient();
 
-    const { mutate: setDoneTodo } = useMutation({
+    const { mutate: setDoneTodo, isPending } = useMutation({
         mutationFn: ({ id, done }: ParameterTypes) => apiSetDoneTodo(id, done),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["todos"] });
@@ -19,5 +19,5 @@ export function useSetDoneTodo() {
             toast.error("An error has occurred while toggling your todo"),
     });
 
-    return { setDoneTodo };
+    return { setDoneTodo, isPending };
 }

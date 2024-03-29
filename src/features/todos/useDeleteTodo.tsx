@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 export function useDeleteTodo() {
     const queryClient = useQueryClient();
 
-    const { mutate: deleteTodo } = useMutation({
+    const { mutate: deleteTodo, isPending } = useMutation({
         mutationFn: (id: number) => apiDeleteTodo(id),
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["todos"] });
@@ -14,5 +14,5 @@ export function useDeleteTodo() {
             toast.error("An error has occurred while deleting your todo"),
     });
 
-    return { deleteTodo };
+    return { deleteTodo, isPending };
 }

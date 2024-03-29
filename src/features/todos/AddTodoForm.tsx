@@ -1,7 +1,8 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useAddTodo } from "./useAddTodo";
+import { HiPencil } from "react-icons/hi2";
 
-import WriteButton from "../../ui/WriteButton";
+import CircularButton from "../../ui/CircularButton";
 
 function AddTodoForm() {
     const { handleSubmit, register, reset } = useForm();
@@ -24,7 +25,9 @@ function AddTodoForm() {
                 {...register("todo")}
             />
 
-            <WriteButton isLoading={isPending} />
+            <CircularButton color="secondary" isLoading={isPending}>
+                <HiPencil />
+            </CircularButton>
         </form>
     );
 }
