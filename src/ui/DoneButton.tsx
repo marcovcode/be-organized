@@ -7,7 +7,7 @@ interface PropTypes {
 function DoneButton({ done }: PropTypes) {
     return (
         <button
-            className={`btn btn-circle btn-sm ${done ? "btn-primary" : ""}`}
+            className={`btn btn-circle btn-sm ${done ? "btn-neutral" : ""}`}
         >
             <HiCheck />
         </button>
