@@ -2,8 +2,8 @@ import { useTodos } from "../features/todos/useTodos";
 
 import TodoList from "../features/todos/TodoList";
 import TodosTitle from "../features/todos/TodosTitle";
-import FullPageSpinner from "../ui/FullPageSpinner";
 import AddTodoForm from "../features/todos/AddTodoForm";
+import FullPageSpinner from "../ui/FullPageSpinner";
 
 function Todos() {
     const { isLoading } = useTodos();

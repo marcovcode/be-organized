@@ -6,10 +6,7 @@ export function useAddTodo() {
     const queryClient = useQueryClient();
 
     const { mutate: addTodo, isPending } = useMutation({
-        mutationFn: (todo: string) => apiAddTodo(todo),
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["todos"] });
-        },
+        mutationFn: (todo: string) => apiAddTodo(todo, queryClient),
         onError: () =>
             toast.error("An error has occurred while adding your todo"),
     });

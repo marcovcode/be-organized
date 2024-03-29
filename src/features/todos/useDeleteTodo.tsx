@@ -6,10 +6,7 @@ export function useDeleteTodo() {
     const queryClient = useQueryClient();
 
     const { mutate: deleteTodo, isPending } = useMutation({
-        mutationFn: (id: number) => apiDeleteTodo(id),
-        onSuccess: () => {
-            queryClient.invalidateQueries({ queryKey: ["todos"] });
-        },
+        mutationFn: (id: number) => apiDeleteTodo(id, queryClient),
         onError: () =>
             toast.error("An error has occurred while deleting your todo"),
     });
