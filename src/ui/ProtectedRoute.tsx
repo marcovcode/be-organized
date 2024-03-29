@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useUser } from "../features/join/useCurrentUser";
+import { useUser } from "../features/auth/useCurrentUser";
 import { PropsWithChildren, useEffect } from "react";
 
 import FullPageSpinner from "./FullPageSpinner";

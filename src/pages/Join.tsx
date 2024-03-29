@@ -1,4 +1,4 @@
-import JoinForm from "../features/join/JoinForm";
+import JoinForm from "../features/auth/JoinForm";
 import FullPageCentered from "../ui/FullPageCentered";
 
 function Join() {
