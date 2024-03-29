@@ -1,13 +1,10 @@
 import { useTodos } from "./useTodos";
 import { Tables } from "../../types";
 
-import FullPageSpinner from "../../ui/FullPageSpinner";
 import Todo from "../../ui/Todo";
 
 function TodoList() {
-    const { todos, isLoading } = useTodos();
-
-    if (isLoading) return <FullPageSpinner />;
+    const { todos } = useTodos();
 
     const sortedTodos = todos!
         .slice()
