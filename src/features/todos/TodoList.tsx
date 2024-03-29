@@ -1,4 +1,5 @@
 import { useTodos } from "./useTodos";
+import { Tables } from "../../types";
 
 import FullPageSpinner from "../../ui/FullPageSpinner";
 import Todo from "../../ui/Todo";
@@ -8,7 +9,7 @@ function TodoList() {
 
     if (isLoading) return <FullPageSpinner />;
 
-    const sortedTodos = todos
+    const sortedTodos = todos!
         .slice()
         .sort(
             (a, b) =>
@@ -18,8 +19,8 @@ function TodoList() {
 
     return (
         <ul className="border-t">
-            {sortedTodos.map((todo) => (
-                <Todo todo={todo} />
+            {sortedTodos.map((todo: Tables<"todos">) => (
+                <Todo todo={todo} key={todo.id} />
             ))}
         </ul>
     );
