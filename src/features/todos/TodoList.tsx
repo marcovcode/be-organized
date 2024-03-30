@@ -1,7 +1,6 @@
 import { useTodos } from "./useTodos";
-import { Tables } from "../../types";
 
-import Todo from "../../ui/Todo";
+import TodoItem from "../../ui/TodoItem";
 
 function TodoList() {
     const { todos } = useTodos();
@@ -16,8 +15,8 @@ function TodoList() {
 
     return (
         <ul className="border-t">
-            {sortedTodos.map((todo: Tables<"todos">) => (
-                <Todo todo={todo} key={todo.id} />
+            {sortedTodos.map((todo) => (
+                <TodoItem todo={todo} key={todo.id} />
             ))}
         </ul>
     );

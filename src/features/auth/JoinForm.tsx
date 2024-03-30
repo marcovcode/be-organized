@@ -18,7 +18,7 @@ function JoinForm() {
     return (
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             <label
-                className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2 ${isPending && "input-disabled"}`}
+                className={`input input-bordered flex items-center gap-2 ${formState.errors.email && "input-error"} ${isPending && "input-disabled"}`}
             >
                 <HiEnvelope />
 
@@ -30,7 +30,7 @@ function JoinForm() {
                     {...register("email", {
                         pattern: {
                             value: EMAIL_VALIDATION_REGEX,
-                            message: "Invalid email address",
+                            message: "",
                         },
                     })}
                 />

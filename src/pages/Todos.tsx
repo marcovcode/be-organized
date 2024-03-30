@@ -2,9 +2,9 @@ import { useTodos } from "../features/todos/useTodos";
 
 import TodoList from "../features/todos/TodoList";
 import TodosTitle from "../features/todos/TodosTitle";
-import AddTodoForm from "../features/todos/AddTodoForm";
+import TodoForm from "../features/todos/TodoForm";
 import FullPageSpinner from "../ui/FullPageSpinner";
-import Logout from "../ui/Logout";
+import Logout from "../ui/LogoutButton";
 
 function Todos() {
     const { isLoading } = useTodos();
@@ -19,7 +19,7 @@ function Todos() {
                     <Logout />
                 </div>
                 <TodoList />
-                <AddTodoForm />
+                <TodoForm />
             </div>
         </div>
     );

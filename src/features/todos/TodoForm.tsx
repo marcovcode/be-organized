@@ -1,11 +1,11 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { useAddTodo } from "./useAddTodo";
 import { HiPencil } from "react-icons/hi2";
-
-import CircularButton from "../../ui/CircularButton";
 import { useEffect, useRef } from "react";
 
-function AddTodoForm() {
+import CircularButton from "../../ui/CircularButton";
+
+function TodoForm() {
     const { handleSubmit, register, reset } = useForm();
     const { addTodo, isPending } = useAddTodo();
 
@@ -20,13 +20,13 @@ function AddTodoForm() {
     };
 
     useEffect(() => {
-        const handlePress = () =>
+        const handleKeyPress = () =>
             document.addEventListener("keypress", () =>
                 todoRef.current?.focus(),
             );
 
-        handlePress();
-        return document.removeEventListener("keypress", handlePress);
+        handleKeyPress();
+        return document.removeEventListener("keypress", handleKeyPress);
     }, []);
 
     return (
@@ -50,4 +50,4 @@ function AddTodoForm() {
     );
 }
 
-export default AddTodoForm;
+export default TodoForm;

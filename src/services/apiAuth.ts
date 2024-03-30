@@ -1,6 +1,6 @@
 import { supabase } from "./supabase";
 
-export async function sendMagicLink(email: string) {
+export async function join(email: string) {
     const { data, error } = await supabase.auth.signInWithOtp({
         email: email,
     });
@@ -9,7 +9,7 @@ export async function sendMagicLink(email: string) {
     return data;
 }
 
-export async function getCurrentUser() {
+export async function getUser() {
     const { data: session } = await supabase.auth.getSession();
     if (!session.session) return null;
 
