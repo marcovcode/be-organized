@@ -7,6 +7,7 @@ import AppLayout from "./ui/AppLayout";
 import FullPageSpinner from "./ui/FullPageSpinner";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Todos from "./pages/Todos";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,8 @@ function App() {
 
             <QueryClientProvider client={queryClient}>
                 <Suspense fallback={<FullPageSpinner />}>
+                    <ReactQueryDevtools />
+
                     <BrowserRouter>
                         <Routes>
                             <Route element={<AppLayout />}>
