@@ -11,8 +11,9 @@ export function useSetDoneTodo() {
     const queryClient = useQueryClient();
 
     const { mutate: setDoneTodo, isPending } = useMutation({
-        mutationFn: ({ id, done }: ParameterTypes) =>
-            apiSetDoneTodo(id, done, queryClient),
+        mutationFn: ({ id, done }: ParameterTypes) => apiSetDoneTodo(id, done),
+        onSuccess: async () =>
+            await queryClient.invalidateQueries({ queryKey: ["todos"] }),
         onError: () =>
             toast.error("An error has occurred while toggling your todo"),
     });
