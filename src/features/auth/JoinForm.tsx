@@ -25,6 +25,7 @@ function JoinForm() {
                 <input
                     className="grow"
                     placeholder="Type your email here..."
+                    type="email"
                     disabled={isPending}
                     required
                     {...register("email", {
