@@ -5,7 +5,7 @@ interface PropTypes {
 function Spinner({ small }: PropTypes) {
     return (
         <span
-            className={`loading loading-spinner ${small ? "loading-sm" : ""}`}
+            className={`loading loading-spinner ${small && "loading-sm"}`}
         ></span>
     );
 }

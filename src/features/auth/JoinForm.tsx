@@ -38,7 +38,7 @@ function JoinForm() {
             </label>
 
             <button className="btn btn-neutral" disabled={isPending}>
-                {isPending ? <Spinner disabled={isPending} /> : "Join"}
+                {isPending ? <Spinner /> : "Join"}
             </button>
         </form>
     );
