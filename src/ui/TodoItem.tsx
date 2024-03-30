@@ -29,7 +29,7 @@ function Todo({ todo }: PropTypes) {
             <span>{todo.content}</span>
             <div className="flex gap-2">
                 <CircularButton
-                    color={todo.done && "neutral"}
+                    color={todo.done ? "neutral" : "default"}
                     small
                     isLoading={isPendingSetDone}
                     onClick={handleToggleDone}
