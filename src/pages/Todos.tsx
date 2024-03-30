@@ -12,7 +12,7 @@ function Todos() {
     if (isLoading) return <FullPageSpinner />;
 
     return (
-        <div className="m-4 flex justify-center">
+        <div className="flex justify-center">
             <div className="flex w-[40rem] flex-col gap-4">
                 <div className="flex items-center justify-between">
                     <TodosTitle />

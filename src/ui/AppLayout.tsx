@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 function AppLayout() {
     return (
-        <div className="font-quicksand">
+        <div className="m-4 font-quicksand">
             <Outlet />
         </div>
     );
