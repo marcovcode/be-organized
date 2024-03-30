@@ -18,8 +18,7 @@ function JoinForm() {
     return (
         <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
             <label
-                className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2`}
-                disabled={isPending}
+                className={`${formState.errors.email && "input-error"} input input-bordered flex items-center gap-2 ${isPending && "input-disabled"}`}
             >
                 <HiEnvelope />
 
