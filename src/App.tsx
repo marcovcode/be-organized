@@ -7,12 +7,12 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import AppLayout from "./ui/AppLayout";
 import FullPageSpinner from "./ui/FullPageSpinner";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import Todos from "./pages/Todos";
-import PageNotFound from "./pages/PageNotFound";
 
 const queryClient = new QueryClient();
 
+const Todos = lazy(() => import("./pages/Todos"));
 const Join = lazy(() => import("./pages/Join"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function App() {
     return (
