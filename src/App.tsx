@@ -8,6 +8,7 @@ import AppLayout from "./ui/AppLayout";
 import FullPageSpinner from "./ui/FullPageSpinner";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import Todos from "./pages/Todos";
+import PageNotFound from "./pages/PageNotFound";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ function App() {
                                     }
                                 />
                                 <Route element={<Join />} path="join" />
+                                <Route element={<PageNotFound />} path="*" />
                             </Route>
                         </Routes>
                     </BrowserRouter>
